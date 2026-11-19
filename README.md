@@ -50,5 +50,5 @@ The skill walks through each of those at the moment it is needed.
 
 ## Version
 
-v16 · 2026-11-19. The canonical copy is the one served at
-config.museblues.com/SKILL.md; this repo mirrors it.
+v18 · 2026-11-19. This repo's copy is identical to the one served at
+config.museblues.com/SKILL.md.

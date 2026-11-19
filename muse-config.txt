@@ -331,11 +331,11 @@ Technology tab | What it holds — the general features |
 
 **Limits** | The transparent settings registry: every limit, flag and setting that affects operations, each with what it does, who set it, why, its impact, and a human toggle. No behind-the-scenes rules — a setting invented by a model is *proposed* until a human reviews it, and this page is where that review happens. |
 
-**Intranet API** | The API this intranet itself runs on: the endpoints behind the tabs above, documented the same way as the Content → API catalogue. |
+**Intranet API** | Not a Technology tab: the API this intranet itself runs on is documented in exactly one place — the Content → API catalogue's Intranet tab, alongside every other API. API documentation has one home; a second description of the same API on another tab is a defect. |
 
 Design tab | What it holds — the general features |
 
-**Design** | The design guide: the visual rules (in full in §2), the page templates, and the standing style decisions every page is built and graded against. One guide — a page that contradicts it is a defect on the page, not a second opinion. |
+**Guide** | The design guide: the visual rules (in full in §2), the page templates, and the standing style decisions every page is built and graded against. One guide — a page that contradicts it is a defect on the page, not a second opinion. (The Design section's single tab is named Guide, not Design — a section and its only tab never share a name.) |
 
 Standing page | What it holds — the general features |
 
@@ -988,4 +988,4 @@ Without a network, two agents owned by the same person still cannot reach each o
 Names, account identifiers, email addresses, real domains, item contents, and the original owner's devices and machines — their names, models, addresses and network identifiers — and every other piece of the original owner's data — deliberately, and permanently. A clone is the *structure*: the same pieces, the same queue, the same rules, built fresh in the reader's own accounts. If a step above seems to need a value from the original system, it doesn't — it needs the reader's own equivalent, and that is an **ASK YOUR HUMAN** moment.
 
 Muse Configuration Spec — generic edition
-v16 · 2026-11-19
+v18 · 2026-11-19
