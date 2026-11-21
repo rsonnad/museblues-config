@@ -919,7 +919,25 @@ Choosing a restaurant with the owner is a standing task with its own rules:
 
 - **Present as a page when asked.** When the owner asks for it, present the surviving options as a proper webpage with pictures and descriptions, not just a chat list — and the options that go on the page are the ones chosen in the conversation. The top of the page states the confirmed criteria the options were filtered by, so the owner can see the filter set the page answers to.
 
+- **Voting on the options page is real and shared.** Each option carries a vote button, and the votes are saved in the backend (the setup's Cloudflare / server storage), so every voter sees the same counts. Never local-only state that resets on reload — a vote that exists only in one browser is a fake feature.
+
 - **Nothing is confirmed outward until the owner picks.** Do not message the dining companion, and do not confirm a time or a place with anyone, until the venue's openness is verified and the owner has picked the place.
+
+### Scheduling pages — programmatic, gated, status-shaded
+
+When a page exists to schedule people into time slots — showings, appointments, visits — build it this way by default:
+
+- **Programmatic, with saved state.** The page is a programmatic Cloudflare page backed by the database, never a static view-only page: entries are created, changed and re-read from saved state.
+
+- **Access limited to the named people.** Only the people who need it — the owner and the host or coordinator running the schedule — get in, gated by email (Cloudflare Access).
+
+- **Status shading on every entry, with a legend.** Universal status colours: confirmed / scheduled = green, proposed / awaiting reply = yellow, cancelled / needs reschedule = red. The legend sits on the page, and an entry's colour is its status at a glance.
+
+- **Rescheduling lives on the page.** Each entry has a Reschedule action: it marks the entry not confirmed — the time is no longer good (red) — and triggers an email to the agent's own mailbox; the agent then messages every person attached to that slot that the time is no longer good, it is not confirmed, and a different time is needed.
+
+- **Contact details on the page.** Every person listed shows their phone number with a tap-to-call link — taken from source records only, never invented; when no number is on file, the page says "No phone on file".
+
+- **The link goes out, and is always dropped in chat.** The page's link is emailed to everyone who needs access, and whenever the page is published its actual URL is dropped in the chat for the owner (the testable-link rule).
 
 ## 6. Messaging — how the agent connects (iMessage included)
 
@@ -1006,4 +1024,4 @@ Without a network, two agents owned by the same person still cannot reach each o
 Names, account identifiers, email addresses, real domains, item contents, and the original owner's devices and machines — their names, models, addresses and network identifiers — and every other piece of the original owner's data — deliberately, and permanently. A clone is the *structure*: the same pieces, the same queue, the same rules, built fresh in the reader's own accounts. If a step above seems to need a value from the original system, it doesn't — it needs the reader's own equivalent, and that is an **ASK YOUR HUMAN** moment.
 
 Muse Configuration Spec — generic edition
-v20 · 2026-11-21
+v21 · 2026-11-21
