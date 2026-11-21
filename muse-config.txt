@@ -909,13 +909,15 @@ Choosing a restaurant with the owner is a standing task with its own rules:
 
 - **Accumulate the criteria — never drop one.** Every constraint the owner adds during the conversation (cuisine, dietary pattern, area, price, rating floor, vibe, seating, day and time) is added to all the previous ones, and the full set is applied together for the rest of the conversation. A new criterion never silently replaces an earlier one. Never recommend an option that fails a stated criterion without flagging, in the same breath, that it does not meet the criteria.
 
+- **Confirm the criteria every time — defaults are pre-filled, never assumed.** Every restaurant request starts by confirming the selection criteria with the owner: the dietary pattern and cuisine; the area; the time it must be open; sit-down, or is outdoor okay?; is expensive okay?; is a lower rating okay? The owner's established defaults (the values from their past conversations, recorded in the private config) are pre-filled into that checklist — but they are always confirmed before recommendations are finalized, never silently assumed.
+
 - **The owner's stated filters are hard filters.** Whatever the owner states — the dietary pattern they eat by, the areas they name, the seating or start time they want, a minimum rating, a price ceiling, the setting (for example sit-down indoor seating rather than carts, food trucks or outdoor-only, especially in cold weather) — is applied as a hard filter, not a preference to be traded off quietly.
 
 - **Verify open, from the live listing, before recommending.** A place is recommended only after its live listing confirms it is open at the requested day and time. A temporarily-closed or permanently-closed status in the live listing overrides opening hours shown anywhere else: a place can display normal hours for the requested evening in one source while its live listing says Temporarily Closed — the live listing wins, and the place is out.
 
 - **Every recommendation carries its evidence in the text.** For each place: a sourced rating AND its review count, the price level, the address or area, and the hours for the requested day. If no rating is available, say so explicitly — never imply a rating that was not found.
 
-- **Present as a page when asked.** When the owner asks for it, present the surviving options as a proper webpage with pictures and descriptions, not just a chat list — and the options that go on the page are the ones chosen in the conversation.
+- **Present as a page when asked.** When the owner asks for it, present the surviving options as a proper webpage with pictures and descriptions, not just a chat list — and the options that go on the page are the ones chosen in the conversation. The top of the page states the confirmed criteria the options were filtered by, so the owner can see the filter set the page answers to.
 
 - **Nothing is confirmed outward until the owner picks.** Do not message the dining companion, and do not confirm a time or a place with anyone, until the venue's openness is verified and the owner has picked the place.
 
@@ -1004,4 +1006,4 @@ Without a network, two agents owned by the same person still cannot reach each o
 Names, account identifiers, email addresses, real domains, item contents, and the original owner's devices and machines — their names, models, addresses and network identifiers — and every other piece of the original owner's data — deliberately, and permanently. A clone is the *structure*: the same pieces, the same queue, the same rules, built fresh in the reader's own accounts. If a step above seems to need a value from the original system, it doesn't — it needs the reader's own equivalent, and that is an **ASK YOUR HUMAN** moment.
 
 Muse Configuration Spec — generic edition
-v19 · 2026-11-21
+v20 · 2026-11-21
