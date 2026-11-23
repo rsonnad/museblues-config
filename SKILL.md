@@ -840,6 +840,8 @@ The same pattern covers every later secret too — vault entries, service tokens
 
 - **A launched session is not a running session.** Coding-CLI work is live only while its output advances. Every launch is registered and smoke-checked, and the 15-minute health check (§2) — never the owner's question — is what discovers a dead one.
 
+- **Coding-session results are always reported.** When a coding-CLI session (Claude Code, Codex, any coding CLI) launched on the owner's behalf completes, its results are reported to the owner — what was asked, the outcome, the deliverables, and anything that failed or is still owed. A session that finishes silently is a dropped result. A standing check runs every 18 minutes to catch completed sessions and send their results, so no finished session goes unreported; the agent that launched a session also reports in its own chat when it sees the completion — the check is the backstop, not the only path.
+
 - **Directed work never parks.** When the owner directs work, record the direction as the decision on the item and push it forward. The only legal stall is a genuine human decision — written on the item in plain language, with an expiry and a default that applies when it lapses.
 
 - **Settled rules land on their surfaces the same session.** A rule is not handled when it is written down; it is handled when the pages, queues and criteria it governs actually conform — and the whole surface is re-verified, not just the changed lines.
@@ -954,6 +956,8 @@ When a page exists to schedule people into time slots — showings, appointments
 
 - **The link goes out, and is always dropped in chat.** The page's link is emailed to everyone who needs access, and whenever the page is published its actual URL is dropped in the chat for the owner (the testable-link rule).
 
+- **Self-serve pick-a-time for invitees.** Never assign each invitee a single proposed slot — most people never reply, and the slot sits wasted. Instead, every invitee gets the full open window plus a personal pick-a-time link: a one-time code carried as a login parameter on that person's own link. The code logs exactly that person in on first use — single-use, so the same code can never log in a second person — and sets a persistent cookie so they stay logged in. From there they pick, change or cancel their own slot. A pick confirms the slot for that person and blocks it for everyone else atomically — no double-booking — and slots already taken show as taken. On every pick, change and cancel: a confirmation email goes to the person who picked, a notification goes to the agent's mailbox, and a notification goes to the host, with the owner's standing copy on the sends — and every send is written to the messaging log. Picks appear live on the host page with names, times and the same status colours. The page's own address stays clean; the code is a login parameter on the personal link only, never a shared public link.
+
 ## 6. Messaging — how the agent connects (iMessage included)
 
 Messaging reaches the agent two different ways, and confusing them is the usual reason "iMessage doesn't work at all":
@@ -1039,4 +1043,4 @@ Without a network, two agents owned by the same person still cannot reach each o
 Names, account identifiers, email addresses, real domains, item contents, and the original owner's devices and machines — their names, models, addresses and network identifiers — and every other piece of the original owner's data — deliberately, and permanently. A clone is the *structure*: the same pieces, the same queue, the same rules, built fresh in the reader's own accounts. If a step above seems to need a value from the original system, it doesn't — it needs the reader's own equivalent, and that is an **ASK YOUR HUMAN** moment.
 
 Muse Configuration Spec — generic edition
-v26 · 2026-11-21
+v28 · 2026-11-23
