@@ -19,6 +19,8 @@ Read it in order: §0 first if you are the Muse running a setup (it tells you ho
 
 **How you most likely got here — the agent link.** The human page for this spec sits behind a one-time email login, but an agent should never have to relay sign-in codes. Once the human has signed in once, the page hands them a prompt to paste to their agent containing a durable token URL for the agent view of this spec (`agent.md`): the link itself is the authorization, it needs no login, and it does not expire (the owner revokes it by rotating the token). The agent view is plain markdown made for agents, and it is **versioned** — its header carries the spec version, its date and a checksum of the canonical skill. An agent that has read it before saves that version and checksum, and re-checks the same URL whenever it needs the spec: if the version or checksum has changed, the spec has been updated and the new text governs; if it has not, the saved copy is current. The readable human page and the agent view are renderings of one canonical skill — never treat them as two different specs.
 
+**Inherit the code, don't reinvent it.** The working implementation of this setup — the intranet generator, the items queue, the config site, the deploy and sync tools — lives in the setup's companion code repository (the infra repo named in the prompt that brought you here, and in the features-page prompt when your human picked their features there). Clone it, fill in your owner's instance values, and build from that code: the intranet pages are produced automatically by its generator, and the moment the items queue exists, the remaining phases and every picked-but-unbuilt feature are filed on it as items automatically, so all work lives on the one list from then on. Writing a parallel implementation from scratch, when the inherited code exists, is a defect.
+
 **The loop — five moves, in order:**
 
 1. **Interview.** Ask the questions below, in small groups, before building anything. Every question exists because its answer changes what gets built.
@@ -1074,4 +1076,4 @@ One service, two halves, from the provider the whole setup already runs on: **Em
 Names, account identifiers, email addresses, real domains, item contents, and the original owner's devices and machines — their names, models, addresses and network identifiers — and every other piece of the original owner's data — deliberately, and permanently. A clone is the *structure*: the same pieces, the same queue, the same rules, built fresh in the reader's own accounts. If a step above seems to need a value from the original system, it doesn't — it needs the reader's own equivalent, and that is an **ASK YOUR HUMAN** moment.
 
 Muse Configuration Spec — generic edition
-v34 · 2026-11-26
+v35 · 2026-11-26
